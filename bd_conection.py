@@ -1,4 +1,4 @@
-import mysql.conector
+import mysql.connector
 
 
 class Conectar_Base_Innova():
@@ -8,11 +8,15 @@ class Conectar_Base_Innova():
                 host = "localhost",
                 port = 3306,
                 user = "root",
-                password = "admin",
-                db = "bd_ejemplo_innova"
+                password = "1234",
+                db = "bd_big_bread"
             )
         except mysql.connector.Error as descripcionerror:
             print("No se conecto la base de datos",descripcionerror)
+
+
+
+
 
 
 
