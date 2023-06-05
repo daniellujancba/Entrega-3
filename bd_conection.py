@@ -7,8 +7,8 @@ class Conectar_Base_Innova():
             self.conexion = mysql.conector.connect(
                 host = "localhost",
                 port = 3306,
-                user = "root",
-                password = "1234",
+                user = input("ingrese el usuario: "),
+                password = input("ingrese el password: "),
                 db = "bd_big_bread"
             )
         except mysql.connector.Error as descripcionerror:
