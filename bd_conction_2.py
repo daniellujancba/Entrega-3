@@ -1,7 +1,14 @@
-#probar metodo de conexion sin clases
+# probar metodo de conexion sin clases
 
 import mysql.connector
 # genero objeto mi conexion
+
+# importo el paquete de errores de mysql
+
+from mysql.connector import Error
+
+# aplico el metodo try-except
+
 try:
     mi_conexion = mysql.connector.connect(
     host = "localhost",
@@ -25,8 +32,6 @@ try:
 
 
 
-
-
 # cierro del cursor
 
     mi_cursor.close()
@@ -34,8 +39,10 @@ try:
 # cierro la conexion
     mi_conexion.close()
 # verifico que la conexion este cerrada
-#if not mi_conexion.is_connected():
-#    print("la conexion esta cerrada")
+    if not mi_conexion.is_connected():
+        print("la conexion esta cerrada")
 
-except:
+except Error as e:
     print("ha ocurrido un error")
+    print(e)
+
