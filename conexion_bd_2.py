@@ -92,7 +92,7 @@ class Conectar():
                 self.conexion.close()
         except:
             print("NO SE PUDO CONETAR A LA BASE DE DATOS") 
-            
+
 
     def eliminar_tb_db(self): # ELIMINAR UNA TABLA EN UNA BASE DE DATOS EN MYSQL - 6
         try:
@@ -103,6 +103,28 @@ class Conectar():
                 mi_cursor.execute(query)
 
                 mi_cursor.close()
+                self.conexion.close()
+        except:
+            print("NO SE PUDO CONETAR A LA BASE DE DATOS")
+
+
+    def insertar_insumo_tb(self,iD_insumo,nombre,cantidad): # INSERTAR UN INSUMO EN UNA TABLA EN UNA BASE DE DATOS EN MYSQL - 7
+        try:
+            if self.conexion.is_connected():
+                mi_cursor = self.conexion.cursor()
+                
+                query = str(input("Ingrese la sentencia en mayuscula:")) #INSERT INTO insumos (iD_insumo,nombre,cantidad,insumo_unidad) VALUES (%S,%S,%S,%S)
+                valores = (iD_insumo,nombre,cantidad,insumo_unidad)
+                mi_cursor.execute(query,valores)
+                self.conexion.commit()
+                print("Insumo insertado correctamente")
+                mi_cursor.close()
+
+                print(iD_insumo)
+                print(nombre)
+                print(cantidad)
+                print(insumo_unidad)
+
                 self.conexion.close()
         except:
             print("NO SE PUDO CONETAR A LA BASE DE DATOS")
