@@ -21,7 +21,7 @@ class Conectar():
             print("NO SE PUDO CONETAR A LA BASE DE DATOS")
 
 
-    def traer_db(self):   # MUESTRA EL LISTADO DE BASES EN MYSQL     
+    def traer_db(self):   # MUESTRA EL LISTADO DE BASES EN MYSQL - 1     
         try:
             if self.conexion.is_connected():
                 print("esta conectado")       
@@ -37,7 +37,7 @@ class Conectar():
         except:
             print("NO SE PUDO CONETAR A LA BASE DE DATOS") 
 
-    def crear_db(self): #CREA UNA BASE DE DATOS EN MYSQL
+    def crear_db(self): #CREA UNA BASE DE DATOS EN MYSQL - 2
         try:
             if self.conexion.is_connected():
                 print("esta conectado")       
@@ -51,7 +51,18 @@ class Conectar():
             print("NO SE PUDO CONETAR A LA BASE DE DATOS")  
 
 
-        
+    def eliminar_db(self): # ELIMINIA UNA BASE DE DATOS EN MYSQL - 3
+        try:
+            if self.conexion.is_connected():
+                print("esta conectado")       
+                mi_cursor = self.conexion.cursor()
+                print("Para eliminar un BD en el listado de bases de datos")
+                query = str(input("Ingrese la sentencia en mayuscula:")) # DROP DATABASE *****
+                mi_cursor.execute(query)           
+                mi_cursor.close()
+                self.conexion.close()
+        except:
+            print("NO SE PUDO CONETAR A LA BASE DE DATOS")     
 
 
 ##############################################################################################
