@@ -43,8 +43,15 @@ if eleccion == "y":
         tor.eliminar_tb_db()
 
     elif opcion == "7": 
-        iD_insumo = int(input("Ingrese ID del insumo:"))
+        iD_insumo = input("Ingrese ID del insumo:")
         nombre = input("Ingrese el nombre del insumo:")
-        cantidad = int(input("Ingrese la cantidad del insumo:"))
+        cantidad = input("Ingrese la cantidad del insumo:")
         insumo_unidad = input("Ingrese la unidad del insumo:")
-        tor.insertar_insumo_tb(nombre,cantidad)
+        tor.insertar_insumo_tb(iD_insumo,nombre,cantidad,insumo_unidad)
+
+    elif opcion == "8":
+
+        print(tor.ver_insumos_tb())
+
+    else:
+        print("fin de menu") 

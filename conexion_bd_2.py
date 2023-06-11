@@ -108,23 +108,41 @@ class Conectar():
             print("NO SE PUDO CONETAR A LA BASE DE DATOS")
 
 
-    def insertar_insumo_tb(self,iD_insumo,nombre,cantidad): # INSERTAR UN INSUMO EN UNA TABLA EN UNA BASE DE DATOS EN MYSQL - 7
+    def insertar_insumo_tb(self,iD_insumo,nombre,cantidad,insumo_unidad): 
+        # INSERTAR UN INSUMO EN UNA TABLA EN UNA BASE DE DATOS EN MYSQL - 7
         try:
             if self.conexion.is_connected():
                 mi_cursor = self.conexion.cursor()
-                
-                query = str(input("Ingrese la sentencia en mayuscula:")) #INSERT INTO insumos (iD_insumo,nombre,cantidad,insumo_unidad) VALUES (%S,%S,%S,%S)
+                #query = "INSERT INTO insumo(iD_insumo,nomnbre,cantidad,insumo_unidad) VALUES(%s, %s, %s, %s)"
+                #query = str(input("Ingrese la sentencia en mayuscula:"))
+                query = "INSERT INTO insumo(iD_insumo,nombre,cantidad,insumo_unidad) VALUES (%s, %s,%s, %s)"
                 valores = (iD_insumo,nombre,cantidad,insumo_unidad)
                 mi_cursor.execute(query,valores)
                 self.conexion.commit()
                 print("Insumo insertado correctamente")
+                
                 mi_cursor.close()
-
+                
                 print(iD_insumo)
                 print(nombre)
                 print(cantidad)
                 print(insumo_unidad)
 
+                self.conexion.close()
+        except:
+            print("NO SE PUDO CONETAR A LA BASE DE DATOS")
+
+
+    def ver_insumos_tb(self): # VER UN INSUMO EN UNA TABLA EN UNA BASE DE DATOS EN MYSQL - 8
+        try:
+            if self.conexion.is_connected():
+                mi_cursor = self.conexion.cursor()
+                print("Para ver datos una tabla en la base de datos")
+                query = str(input("Ingrese la sentencia en mayuscula:")) #SELECT * FROM Productos
+                mi_cursor.execute(query)
+                resultados= mi_cursor.fetchall()
+                mi_cursor.close()
+                return resultados
                 self.conexion.close()
         except:
             print("NO SE PUDO CONETAR A LA BASE DE DATOS")
