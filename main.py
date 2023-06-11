@@ -21,6 +21,8 @@ if eleccion == "y":
     print("6 - Eliminar tabla en BD")
     print("7 - Insertar insumo en Tabla")
     print("8 - Listado de insumos")
+    print("9 - Insertar productos")
+    print("10 - Ver productos")
 
     opcion = str(input("Ingrese numero: "))
 
@@ -50,8 +52,20 @@ if eleccion == "y":
         tor.insertar_insumo_tb(iD_insumo,nombre,cantidad,insumo_unidad)
 
     elif opcion == "8":
-
         print(tor.ver_insumos_tb())
+
+    elif opcion == "9":
+        iD_Producto = input("Ingrese ID del producto:")
+        nombre_Producto = input("Ingrese el nombre del producto:")
+        stock = input("Ingrese stock del producto:")
+        precio = input("Ingrese el precio del producto:")
+        unidad_de_medida = input("Ingrese la unidad de medida del producto:")
+        iD_Receta = input("Ingrese el nombre de la receta de producto:")
+
+        tor.insertar_producto_tb(iD_Producto,nombre_Producto,stock,precio,unidad_de_medida,iD_Receta)
+        
+    elif opcion == "10":
+        print(tor.ver_producto_tb())
 
     else:
         print("fin de menu") 

@@ -137,7 +137,7 @@ class Conectar():
         try:
             if self.conexion.is_connected():
                 mi_cursor = self.conexion.cursor()
-                print("Para ver datos una tabla en la base de datos")
+                #print("Para ver datos una tabla en la base de datos")
                 query = str(input("Ingrese la sentencia en mayuscula:")) #SELECT * FROM Productos
                 mi_cursor.execute(query)
                 resultados= mi_cursor.fetchall()
@@ -146,6 +146,43 @@ class Conectar():
                 self.conexion.close()
         except:
             print("NO SE PUDO CONETAR A LA BASE DE DATOS")
+
+
+    def insertar_producto_tb(self,iD_Producto,nombre_Producto,stock,precio,unidad_de_medida,iD_Receta): 
+        # INSERTAR UN PRODUCTO EN UNA TABLA EN UNA BASE DE DATOS EN MYSQL - 9
+        try:
+            if self.conexion.is_connected():
+                mi_cursor = self.conexion.cursor()
+                #query = "INSERT INTO insumo(iD_insumo,nomnbre,cantidad,insumo_unidad) VALUES(%s, %s, %s, %s)"
+                #query = str(input("Ingrese la sentencia en mayuscula:"))
+                query = "INSERT INTO producto(iD_Producto,nombre_Producto,stock,precio,unidad_de_medida,iD_Receta) VALUES (%s, %s, %s, %s, %s, %s)"
+                valores = (iD_Producto,nombre_Producto,stock,precio,unidad_de_medida,iD_Receta)
+                mi_cursor.execute(query,valores)
+                self.conexion.commit()
+                print("Producto insertado correctamente")
+                
+                mi_cursor.close()
+
+                self.conexion.close()
+        except:
+            print("NO SE PUDO CONETAR A LA BASE DE DATOS")
+
+
+    def ver_producto_tb(self): # VER UN PRODUCTO EN UNA TABLA EN UNA BASE DE DATOS EN MYSQL - 10
+        try:
+            if self.conexion.is_connected():
+                mi_cursor = self.conexion.cursor()
+                print("Informacion de los  productos")
+                #query = str(input("Ingrese la sentencia en mayuscula:")) #SELECT * FROM Productos
+                query = "SELECT * FROM producto"
+                mi_cursor.execute(query)
+                resultados= mi_cursor.fetchall()
+                mi_cursor.close()
+                return resultados
+                self.conexion.close()
+        except:
+            print("NO SE PUDO CONETAR A LA BASE DE DATOS")
+    
 
 
 
