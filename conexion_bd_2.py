@@ -1,5 +1,7 @@
 import mysql.connector
 
+from producto_bd import Producto
+
 
 class Conectar():
 
@@ -7,7 +9,7 @@ class Conectar():
         try:
             self.conexion = mysql.connector.connect(
                 host = 'localhost',
-                port = 3306,
+                port = input("Ingrese el Puerto: "), # 3306
                 user = input("Ingrese el Usuario: "), # root
                 password = input("Ingrese el Password: "),# " " - vacio + enter
                 db= input("Ingrese el nombre de la Base de Datos: ")

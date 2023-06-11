@@ -41,5 +41,9 @@ class Producto():
         self.unidad_de_medida = unidad_de_medida
     def setiD_Receta(self,iD_Receta):
         self.iD_Receta = iD_Receta   
+
+
+producto_1 = Producto(1,"casa",4, 10,"kg",4) 
+print(producto_1.getnombre_Producto)
     
     
