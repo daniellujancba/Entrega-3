@@ -23,7 +23,7 @@ if eleccion == "y":
     print("8 - Listado de insumos")
 
     opcion = str(input("Ingrese numero: "))
-    
+
     if opcion == "1":
         tor.traer_db()
 
@@ -32,3 +32,6 @@ if eleccion == "y":
 
     elif opcion == "3":
         tor.eliminar_db()
+
+    elif opcion == "4":
+        tor.ver_tb_db()

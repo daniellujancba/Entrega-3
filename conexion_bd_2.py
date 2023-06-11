@@ -62,7 +62,26 @@ class Conectar():
                 mi_cursor.close()
                 self.conexion.close()
         except:
-            print("NO SE PUDO CONETAR A LA BASE DE DATOS")     
+            print("NO SE PUDO CONETAR A LA BASE DE DATOS") 
+
+    def ver_tb_db(self): # PERMITE VER LAS TABLAS DE UNA BASE DE DATOS DE MYSQL - 4
+        try:
+            if self.conexion.is_connected():
+                mi_cursor = self.conexion.cursor()
+                print("Para mostrar una tabla en la base de datos")
+                query = str(input("Ingrese la sentencia en mayuscula:")) #SHOW TABLES
+                mi_cursor.execute(query)
+
+                for datos in mi_cursor:
+                    print(datos)
+
+                mi_cursor.close()
+                self.conexion.close()
+        except:
+            print("NO SE PUDO CONETAR A LA BASE DE DATOS")  
+
+    
+      
 
 
 ##############################################################################################
