@@ -25,3 +25,6 @@ if eleccion == "y":
     opcion = str(input("Ingrese numero: "))
     if opcion == "1":
         tor.traer_db()
+        
+    elif opcion == "2":
+        tor.crear_db()
