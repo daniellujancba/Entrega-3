@@ -35,3 +35,9 @@ if eleccion == "y":
 
     elif opcion == "4":
         tor.ver_tb_db()
+
+    elif opcion == "5":
+        tor.crear_tb_db()
+
+    elif opcion == "6":
+        tor.eliminar_tb_db()

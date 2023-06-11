@@ -78,10 +78,35 @@ class Conectar():
                 mi_cursor.close()
                 self.conexion.close()
         except:
-            print("NO SE PUDO CONETAR A LA BASE DE DATOS")  
+            print("NO SE PUDO CONETAR A LA BASE DE DATOS") 
 
-    
-      
+    def crear_tb_db(self): # CREA UNA TABLA EN UNA BASE DE DATOS EN MYSQL - 5
+        try:
+            if self.conexion.is_connected():
+                mi_cursor = self.conexion.cursor()
+                print("Para crear una tabla en la base de datos")
+                query = str(input("Ingrese la sentencia en mayuscula:")) #CREATE TABLE *****(*** int, **** VARCHAR(20))
+                mi_cursor.execute(query)
+
+                mi_cursor.close()
+                self.conexion.close()
+        except:
+            print("NO SE PUDO CONETAR A LA BASE DE DATOS") 
+            
+
+    def eliminar_tb_db(self): # ELIMINAR UNA TABLA EN UNA BASE DE DATOS EN MYSQL - 6
+        try:
+            if self.conexion.is_connected():
+                mi_cursor = self.conexion.cursor()
+                print("Para eliminar una tabla en la base de datos")
+                query = str(input("Ingrese la sentencia en mayuscula:")) # DROP TABLE ****
+                mi_cursor.execute(query)
+
+                mi_cursor.close()
+                self.conexion.close()
+        except:
+            print("NO SE PUDO CONETAR A LA BASE DE DATOS")
+
 
 
 ##############################################################################################
