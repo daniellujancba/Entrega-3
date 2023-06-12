@@ -145,6 +145,7 @@ class Conectar():
                 resultados= mi_cursor.fetchall()
                 mi_cursor.close()
                 return resultados
+            
                 self.conexion.close()
         except:
             print("NO SE PUDO CONETAR A LA BASE DE DATOS")
