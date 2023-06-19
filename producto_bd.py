@@ -9,14 +9,14 @@ class Producto():
     ID_Receta = 0
 
     def __init__(self,iD_Producto,nombre_Producto,stock,precio,unidad_de_medida,iD_Receta):
-        self.ID_Producto = iD_Producto
+        self.ID_Producto = iD_Producto 
         self.Nombre_Producto =nombre_Producto
         self.Stock = stock
         self.Precio = precio
         self.Unidad_de_medida=unidad_de_medida
         self.ID_Receta =iD_Receta
     
-    def getiD_Producto(self):
+    def getiD_Producto(self): #el objetivo de este metodo es obtener el valor de este en especifico; ID_PRODUCTO
         return self.iD_Producto
     def getnombre_Producto(self):
         return self.nombre_Producto
@@ -29,7 +29,7 @@ class Producto():
     def getiD_Receta(self):
         return self.iD_Receta
     
-    def setiD_Producto(self,iD_Producto):
+    def setiD_Producto(self,iD_Producto):# ESTE METODO ASIGNA UN VALOR A ESTE ATRIBUTO
         self.iD_Producto = iD_Producto
     def setnombre_Producto(self,nombre_Producto):
         self.nombre_Producto = nombre_Producto

@@ -110,8 +110,8 @@ class Conectar():
             print("NO SE PUDO CONETAR A LA BASE DE DATOS")
 
 
-    def insertar_insumo_tb(self,iD_insumo,nombre,cantidad,insumo_unidad): 
-        # INSERTAR UN INSUMO EN UNA TABLA EN UNA BASE DE DATOS EN MYSQL - 7
+    def insertar_insumo_tb(self,iD_insumo,nombre,cantidad,insumo_unidad): # INSERTAR UN INSUMO EN UNA TABLA EN UNA BASE DE DATOS EN MYSQL - 7
+        
         try:
             if self.conexion.is_connected():
                 mi_cursor = self.conexion.cursor()

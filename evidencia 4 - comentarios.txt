@@ -1,0 +1,11 @@
+profesor:
+
+en esta entrega se:
+
+ - arreglo la conexion a la base de datos, incorporando la psibilidad de poner
+puerto, usuario y password, para proteger la BD.
+
+ - se genero un menu, donde estan las opciones de las que se disponen para operar
+con la base desde la aplicacion.
+
+ - no se pudo poner en funcionamiento la clase producto, por ese motivo cada solicitud 

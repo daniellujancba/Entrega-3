@@ -66,6 +66,7 @@ if eleccion == "y":
         
     elif opcion == "10":
         print(tor.ver_producto_tb())
+       
 
     else:
         print("fin de menu") 
