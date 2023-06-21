@@ -1,0 +1,25 @@
+
+ 1 - en el presente trabajo tuvimos el inconveniente de que en lo referido al update de las listas
+no podiamos manejar la sentencia desde Python, de manera que el usuario ingresara solo el nombre de columna y el dato
+a modificar, por esto usamos un artilugio de escribir parate de la sentencia de SQL
+al ingresar el valor a cambiar en la tabla.
+
+2 - el menu de acceso, nos hubiese gustado mejorarlo en funcionalidad, pero debido a que 
+los inconvenientes en la programacion, nos llevo a hacer algo sensillo, pero entendemos 
+efectivo.
+
+3 - los archivos referidos a esta entrega son:
+
+# - Principal(donde se encuentra el menu de acceso para el usuario)
+# - Modelo(donde se desarrollo casi todo el codigo nucleo de la aplicacion,
+	 Ahi se encuentra la clase de Conexion, de Producto, de Insumo, de Recetas
+	de Produccion, como asi tambien los metodos y parametros de cada una de ellas.
+# - Controlador_prod: es la interfase de los productos.
+# - Controlador_insumo: es la interfase de los insumos.
+# - Controlador_receta: interfase de la receta.
+# - Controlador_Produccion: interfase de lo referido a la produccion.
+# - bd_big_bread: script de la base de datos.
+
+4 - Tuvimos inconvenientes con los equipos para el funcionamoento de la base de datos, por lo que el trabajo se centro
+en un equipo en particular.
+ 
