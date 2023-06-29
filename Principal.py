@@ -104,6 +104,7 @@ while True:
         Controlador_insumo.Listar_Insumo()
 
     elif opcion == 8:
+            print("Gracias por su consulta")
             break
     else:
         print("Opcion Incorrecta!!!")
